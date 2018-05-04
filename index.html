@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CS458 Information Visualisation - Midterm Project</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Load the AJAX API -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/visualisation.js"></script>
+</head>
+<body>
+  <h1 class="header">CS458 Information Visualisation - Midterm Project</h1>
+  <h2 class="header">By Omar Iltaf & Michael Giovannoni</h2>
+  <h3 class="header">Country: USA</h3>
+
+  <!-- Div that will hold the pie chart -->
+  <div id="chart_div">
+
+  </div>
+
+  <!-- Div that will hold the selection criteria -->
+  <div id="selection_div">
+    <div id="change_country_div">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Change Country&emsp;&#9660;</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#us">USA</a>
+          <a href="#gb">Great Britain</a>
+          <a href="#de">Germany</a>
+          <a href="#ca">Canada</a>
+          <a href="#fr">France</a>
+        </div>
+      </div>
+    </div>
+    <div id="change_factor_div">
+      <h3>
+        Visualise a different factor:
+      </h3>
+      <form action="">
+        <label class="container">Publish Time
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Likes
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Dislikes
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Comment Count
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
