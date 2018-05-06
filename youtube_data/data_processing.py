@@ -1,8 +1,10 @@
+
 import pandas as pd
 import numpy as np
 from collections import Counter
 from random import randint
-
+import datetime
+import time
 
 
 columnNames = ['video_id', 'title']
@@ -10,6 +12,10 @@ columnNames = ['video_id', 'title']
 df = pd.read_csv("USvideos.csv", error_bad_lines=False)
 
 print(df.describe())
+
+print(list(df))
+
+
 
 categoryList = df['category_id'].tolist()
 likesList = df['likes'].tolist()
@@ -20,7 +26,6 @@ categoryList = np.array(categoryList)
 likesList = np.array(likesList)
 dislikesList = np.array(dislikesList)
 viewsList = np.array(viewsList)
-
 
 
 #random colors
@@ -61,5 +66,98 @@ print("paste this into the js: \n")
 print(sorted(graphList, key=lambda mean: mean[1]))
     
     
+
+oldYoutubeDF = pd.read_csv("USvideosOld.csv", error_bad_lines=False)
+
+print(oldYoutubeDF.describe())
+
+print(list(oldYoutubeDF))
+
+
+#random colors
+colors = []
+for i in range(20):
+    colors.append('%06X' % randint(0, 0xFFFFFF))
+
+
+publishTimeDF['publish_time'] = pd.to_datetime(oldYoutubeDF['publish_time'], format='%Y-%m-%dT%H:%M:%S.%fZ')
+publishTimeDF['publishHour'] = publishTimeDF['publish_time'].dt.time
+
+timeList = publishTimeDF['publishHour'].tolist()
+timeList = np.array(timeList)
+
+
+timeCountList = []
+dataArray = []
+
+t= timeList[0]
+
+
+
+if t > newTime:
+    print("asdasd")
+print("\n\n")  
+lastHour = datetime.time(00, 00, 00)
+for i in range(0,8):
+    hour = (i+1)*3
+    nextHour = datetime.time(hour-1, 59, 59)
+
+    newList = np.asarray(np.where(np.logical_and((timeList > lastHour),  (timeList < nextHour))))    
+    
+    asdf, count = newList.shape
+    
+    timeCountList.append(count)
+
+    timeLabel = lastHour.strftime("%H:%M") + "-" + nextHour.strftime("%H:%M")
+    dataArray.append([timeLabel, count, colors[i]])
+    
+    delta = datetime.timedelta(seconds=1)
+    lastHour = nextHour
+    lastHour = (datetime.datetime.combine(datetime.date(1,1,1),lastHour) + delta).time()
+    
+
+print("\n\n\n")
+print(dataArray)
+    
+
+
+#random colors
+colors = []
+for i in range(20):
+    colors.append('%06X' % randint(0, 0xFFFFFF))
+
+
+viewList = oldYoutubeDF['views']
+viewList = np.array(viewList)
+ 
+timeCountList = []
+viewCountList = []
+dataArray = []
+
+print("\n\n")  
+lastHour = datetime.time(00, 00, 00)
+for i in range(0,8):
+    hour = (i+1)*3
+    nextHour = datetime.time(hour-1, 59, 59)
+
+    newList = np.asarray(np.where(np.logical_and((timeList > lastHour),  (timeList < nextHour))))    
+    
+    asdf, count = newList.shape    
+    
+    
+    viewCount = int(round(np.mean(viewList[newList])))
+    viewCountList.append(viewCount)
+
+    timeLabel = lastHour.strftime("%H:%M") + "-" + nextHour.strftime("%H:%M")
+    dataArray.append([timeLabel, viewCount, colors[i]])
+    
+    delta = datetime.timedelta(seconds=1)
+    lastHour = nextHour
+    lastHour = (datetime.datetime.combine(datetime.date(1,1,1),lastHour) + delta).time()
+    
+    
+
+print("\n\n\n")
+print(dataArray)
     
 
