@@ -42,8 +42,14 @@ body {
   margin: 10px;
 }
 
+#note {
+  font-size: 0.7em;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
 #current_country_header {
-  margin: 10px 0px;
+  margin: 0 0 10px 0;
 }
 
 #current_country {

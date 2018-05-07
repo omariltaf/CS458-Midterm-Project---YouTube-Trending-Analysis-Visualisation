@@ -14,7 +14,9 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- Import jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Import local js -->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/chart_functions.js"></script>
   <script type="text/javascript" src="js/visualisation.js"></script>
 </head>
 <body>
@@ -30,12 +32,13 @@
   <!-- Div that will hold the selection criteria -->
   <div id="selection_div">
     <div id="change_country_div">
+      <p id="note" hidden>Note: Only the USA dataset is currently supported.</p>
       <h6 id="current_country_header">Current Country: <span id="current_country">USA</span></h6>
       <!-- Dropdown Trigger -->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Change Country</a>
+      <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Change Country</a>
 
       <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'>
+      <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">USA</a></li>
         <li class="divider" tabindex="-1"></li>
         <li><a href="#!">Great Britain</a></li>
@@ -49,26 +52,32 @@
       <form id="change_factor_form" action="#">
         <p>
           <label>
-            <input class="with-gap" name="factor" value="Publish Time" type="radio" checked="checked" />
-            <span>Publish Time</span>
+            <input class="with-gap" name="factor" value="Publish Time by Average Views" type="radio" checked="checked" />
+            <span>Publish Time by Average Views</span>
           </label>
         </p>
         <p>
           <label>
-            <input class="with-gap" name="factor" value="Categories" type="radio" />
-            <span>Categories</span>
+            <input class="with-gap" name="factor" value="Publish Time by Video Count" type="radio" />
+            <span>Publish Time by Video Count</span>
           </label>
         </p>
         <p>
           <label>
-            <input class="with-gap" name="factor" value="Like/Dislike Ratio" type="radio" disabled="disabled" />
-            <span>Like/Dislike Ratio</span>
+            <input class="with-gap" name="factor" value="Categories by Average Views" type="radio" />
+            <span>Categories by Average Views</span>
           </label>
         </p>
         <p>
           <label>
-            <input class="with-gap" name="factor" value="Comment Count" type="radio" disabled="disabled" />
-            <span>Comment Count</span>
+            <input class="with-gap" name="factor" value="Likes & Dislikes by Average Views" type="radio" disabled="disabled" />
+            <span>Likes & Dislikes by Average Views</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input class="with-gap" name="factor" value="Comment Count by Average Views" type="radio" disabled="disabled" />
+            <span>Comment Count by Average Views</span>
           </label>
         </p>
       </form>
