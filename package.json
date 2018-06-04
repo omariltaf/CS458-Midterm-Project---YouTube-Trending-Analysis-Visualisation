@@ -1,0 +1,22 @@
+{
+  "name": "cs458-midterm-project---youtube-trending-analysis-visualisation",
+  "version": "1.0.0",
+  "description": "Link to webpage: http://web.engr.oregonstate.edu/~iltafo/cs458/CS458-Midterm-Project---YouTube-Trending-Analysis-Visualisation/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omariltaf/CS458-Midterm-Project---YouTube-Trending-Analysis-Visualisation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omariltaf/CS458-Midterm-Project---YouTube-Trending-Analysis-Visualisation/issues"
+  },
+  "homepage": "https://github.com/omariltaf/CS458-Midterm-Project---YouTube-Trending-Analysis-Visualisation#readme",
+  "dependencies": {
+    "chart.js": "^2.7.2"
+  }
+}

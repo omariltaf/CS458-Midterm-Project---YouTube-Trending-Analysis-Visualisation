@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!-- Import Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <!-- Load the AJAX API -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- Import jQuery -->
@@ -26,7 +28,7 @@
 
   <!-- Div that will hold the pie chart -->
   <div id="chart_div">
-
+    <canvas id="currentChart"></canvas>
   </div>
 
   <!-- Div that will hold the selection criteria -->

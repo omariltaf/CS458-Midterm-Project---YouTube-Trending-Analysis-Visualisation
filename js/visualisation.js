@@ -1,10 +1,10 @@
-// Load the Visualization API and the corechart package.
-google.charts.load("current", {
-    "packages": ["corechart"]
-});
+var currentChart;
+var ctx;
 
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawPublishTimeByViewsChart);
+window.onload = function () {
+  ctx = document.getElementById("currentChart");
+  currentChart = drawPublishTimeByViewsChart(ctx);
+}
 
 // Requests JSON data from server
 // var request = new XMLHttpRequest();
@@ -26,23 +26,44 @@ document.addEventListener("DOMContentLoaded", function() {
     var instances = M.Dropdown.init(elems, options);
 });
 
+// Chart.js functionality
+function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+}
+
 // jQuery
 $(document).ready(function() {
     // Detects when to load a new visualisation
     $("#change_factor_form input").on("change", function() {
         switch ($("input[name=factor]:checked", "#change_factor_form").val()) {
           case "Publish Time by Average Views":
-            google.charts.setOnLoadCallback(drawPublishTimeByViewsChart);
+            currentChart.destroy();
+            currentChart = drawPublishTimeByViewsChart(ctx);
             break;
           case "Publish Time by Video Count":
-            google.charts.setOnLoadCallback(drawPublishTimeByCountChart);
+            currentChart.destroy();
+            currentChart = drawPublishTimeByCountChart(ctx);
             break;
           case "Categories by Average Views":
-            google.charts.setOnLoadCallback(drawCategoryByViewsChart);
+            currentChart.destroy();
+            currentChart = drawCategoryByViewsChart(ctx);
             break;
           default:
             console.log("Default");
-            google.charts.setOnLoadCallback(drawPublishTimeByViewsChart);
+            currentChart.destroy();
+            currentChart = drawPublishTimeByViewsChart(ctx);
             break;
         }
     });
