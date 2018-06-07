@@ -598,7 +598,7 @@ function drawDonutChart(ctx) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Categories of Trending Youtube Videos by Average Views'
+                text: 'Likes, Dislikes, and Comments'
             }
         }
 
