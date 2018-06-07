@@ -595,6 +595,7 @@ function drawDonutChart(ctx) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             title: {
                 display: true,
                 text: 'Categories of Trending Youtube Videos by Average Views'
