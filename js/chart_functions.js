@@ -598,7 +598,7 @@ function drawDonutChart(ctx) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Likes, Dislikes, and Comments'
+                text: 'Likes, Dislikes, and Comments for all US videos'
             }
         }
 

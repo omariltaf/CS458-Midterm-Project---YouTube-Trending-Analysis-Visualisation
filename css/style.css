@@ -32,37 +32,24 @@ body {
 #selection_div {
   margin: 20px;
   padding: 20px;
-  height: 400px;
+  height: 420px;
   display: inline-block;
   float: left;
   border: 1px solid #26a69a;
   /* text-align: center; */
 }
-/******************************************************************************/
 
-/* Country Selection **********************************************************/
-#change_country_div {
-  margin: 10px;
-}
-
-#note {
-  font-size: 0.7em;
-  font-style: italic;
-  margin-bottom: 0;
-}
-
-#current_country_header {
-  margin: 0 0 10px 0;
-}
-
-#current_country {
-  color: #26a69a;
+#instruction {
   font-weight: bold;
+  font-size: 12px;
+  width: 250px;
+  margin: 0 10px 0 10px;
+  /* border: 1px solid black; */
 }
 /******************************************************************************/
 
 /* Factor Selection ***********************************************************/
 #change_factor_div {
-  margin: 30px 10px;
+  margin: 10px 10px;
 }
 /******************************************************************************/
