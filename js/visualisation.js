@@ -40,15 +40,16 @@ function removeData(chart) {
 function drawWordCloud() {
   d3.wordcloud()
     .size([800, 380])
-    .selector('#wordcloud')
+    .selector("#wordcloud")
+    .scale("linear")
     .words([
-      {text: 'a', size: 5},
-      {text: 'b', size: 5},
-      {text: 'c', size: 5},
-      {text: 'd', size: 5},
-      {text: 'e', size: 5},
-      {text: 'f', size: 5},
-      {text: 'g', size: 5},
+      {text: 'apple', size: 5},
+      {text: 'banana', size: 10},
+      {text: 'cow', size: 15},
+      {text: 'duck', size: 20},
+      {text: 'elephant', size: 25},
+      {text: 'fish', size: 30},
+      {text: 'giraffe', size: 35},
     ])
     .start();
 }
