@@ -143,7 +143,7 @@ function drawPublishTimeByViewsChart(ctx) {
             responsive: true,
             title: {
                 display: true,
-                text: 'Publish Time of Trending Youtube Videos by Average Views'
+                text: 'Publish Time of Trending Youtube Videos by View Percentage'
             },
             scales: {
                 yAxes: [{
@@ -598,7 +598,7 @@ function drawDonutChart(ctx) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Likes, Dislikes, and Comments for all US videos'
+                text: 'Average Likes, Dislikes, and Comments for all Countries'
             }
         }
 

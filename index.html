@@ -34,6 +34,7 @@
 
   <!-- Div that will hold the chart -->
   <div id="chart_div">
+    <p id="wordcloud_title" hidden>Most Popular Video Tags for all Countries</p>
     <div id="wordcloud"></div>
     <canvas id="currentChart"></canvas>
   </div>
@@ -50,7 +51,7 @@
         <p>
           <label>
             <input class="with-gap" name="factor" value="Publish Time by Average Views" type="radio" checked="checked" />
-            <span>Publish Time by Average Views</span>
+            <span>Publish Time by View Percentage</span>
           </label>
         </p>
         <p>
@@ -68,13 +69,13 @@
         <p>
           <label>
             <input class="with-gap" name="factor" value="Likes, Dislikes, and Comments" type="radio" />
-            <span>Likes, Dislikes, and Comments <br />for all US videos</span>
+            <span>Average Likes, Dislikes, <br />and Comments for all Countries</span>
           </label>
         </p>
         <p>
           <label>
             <input class="with-gap" name="factor" value="Video Tags Word Cloud" type="radio" />
-            <span>Video Tags Word Cloud for all US videos</span>
+            <span>Most Popular Video Tags for <br />all Countries</span>
           </label>
         </p>
         <!-- <p>
