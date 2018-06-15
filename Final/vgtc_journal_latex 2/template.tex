@@ -159,16 +159,19 @@ Many papers have been written about the problem of visualizing data from social 
 
 \subsection{Data Source}
 The data we will use is the Trending Youtube Video Statistics published by kaggle.com. This data consists of several months of statistics on the top 200 most popular Youtube videos as defined by Youtube in their trending video section. Data sets for several different regions are available including the United States, France, Great Britain, and Canada. 
-The data set consists of a flat record. For each video entry, data such as views, likes, dislikes, comment count, and description are provided. The full structure of the data is illustrated in Figure !!!  
 
 The data set consists of a flat record. For each video entry, data such as views, likes, dislikes, comment count, and description are provided. The full structure of the data is illustrated in figure \ref{fig:data}.
 
 \subsection{Data Manipulation}
-To create this visualization we made use of several different tools. To analyze and organize our data we wrote scripts in Python using the Numpy and Pandas libraries. Pandas allowed us to quickly parse the large csv file with pandas.read\_csv() and then select the columns we needed while Numpy was essential for calculating the data's statistics. The pandas.to\_datetime() function allowed us to quickly parse the timestamp column provided in the data set and with Python's datetime library we were able to convert the column into easily manipulate datetime objects.  Using the numpy.where() and numpy.mean() functions, we could select the columns we needed and calculate the relevant statistics. For example, to select the indices of all videos published between two different times we used np.where(np.logical\_and((timeList $>$ lastHour),  (timeList $<$ nextHour))). After analyzing the data plain Python was used to format the output in a form that was readable by our chosen chart creation tool
+To create this visualization we made use of several different tools. To analyze and organize our data we wrote scripts in Python using the Numpy and Pandas libraries. Pandas allowed us to quickly parse the large csv file with pandas.read\_csv() and then select the columns we needed while Numpy was essential for calculating the data's statistics. The pandas.to\_datetime() function allowed us to quickly parse the timestamp column provided in the data set and with Python's datetime library we were able to convert the column into easily manipulate datetime objects.  Using the numpy.where() and numpy.mean() functions, we could select the columns we needed and calculate the relevant statistics. For example, to select the indices of all videos published between two different times we used np.where(np.logical\_and((timeList $>$ lastHour),  (timeList $<$ nextHour))). To generate a word cloud, we used the tags column of the data and generated a dict that contained all words paired with the count of how many times they appeared in the tags. We took the top 150 of these words for our wordcloud. After analyzing the data plain Python was used to format the output in a form that was readable by our chosen chart creation tool
 
 \subsection{Visualization Construction}
 
-To create the graphs we made use of the Google Charts API. Google Charts allowed us to quickly create visually pleasing and interactive graphs in plain Javascript, and then embed them into our webpage. The webpage itself with the visualisation settings panel was created with a mixture of HTML, Javascript, and CSS. The jQuery library was used to handle the the user interactions with the site and to respond accordingly. This includes displaying the appropriate visualisation based on the user’s selection and also the dealing with the dropdown functionality. The Materialize framework was utilised so as to provide the site with a well-designed, responsive and modern interface. These were all imported in the HTML head section, allowing them to be used throughout the code.
+To create the graphs we used the Chart.JS charting library. This library allowed us to easily produce different types of graphs all of which were visually pleasing and interactive. These were integrated into our visualisation webpage using Javascript. The D3 Cloud library was also used to create a word cloud as Chart.JS does not support this feature. The webpage itself with the visualisation settings panel was created with a mixture of HTML, Javascript, and CSS. The jQuery library was used to handle the the user interactions with the site and to respond
+accordingly. This includes displaying the appropriate visualisation based on the users? selection. The Materialize framework was utilised so as to provide the site with a well-designed, responsive and modern interface. These were all imported in the HTML head section, allowing them to be used throughout the code.
+
+Bar charts were used to illustrate publish time and categories, a donut chart was used to show the makeup of the video's likes, dislikes, and comment counts, and a word cloud was used to visualize video tags. 
+
  
 
 \begin{figure}[tb]
@@ -189,7 +192,20 @@ To create the graphs we made use of the Google Charts API. Google Charts allowed
 \section{Results}
 
 The results show a higher view count for videos published between midnight and noon, illustrated in figure \ref{fig:publishtimeviews}. The highest view counts are on videos published between 3:00 AM and 6:00 AM with the lowest being between 6:00 PM and 9:00 PM. Clearly videos published early in the day are more successful. As we can see in figure \ref{fig:publishtimevideocount}, the opposite pattern is observed when looking at the most popular time of day for publishing videos. A strong majority of videos are published within the afternoon and evening hours.
-Of the video categories, comedy and music are by far the most popular. Comedy has the highest views with an average of 1.2 million. Of the 16 categories that are featured on the YouTube Trending videos list (not all categories appear), the shows category is by far the least popular with an average view count of 8492. It is not clear why the view count of the shows category is so low but it is low enough to be considered an outlier. 
+
+One interesting feature of the data is that the most successful publish time is common to all countries. We expected for different countries to have different top publish times due to differing timezones so this was unexpected. Several possibilities can explain this discrepancy. It is possible that the United States is so impactful in the mediasphere that they choose the most successful publish time even on videos from other countries.  The most successful slot, 3:00 - 6:00 AM PST, is when most of the east coast of the United States is waking up, a common time to access videos and a time accepted by many to be the best time of day to post internet content. We must also wonder if the data we have is labeled accurately. The times are all supposed to be in PST, Youtube's timezone, but looking at the distribution it is possible that the timezones are that of the country where the video was published.
+
+Of the US video categories, music is by far the most popular. Music has the highest views at 5.9 million average views. Of the 16 categories that are featured on the YouTube Trending videos list (not all categories appear), the News and Politics category is by far the least popular with an average view count of 581,000. We see a similar distribution of category views between the different countries with a few exceptions. Science and Technology is far more popular in Great Britain than in the other countries we observed as is News and Politics.
+
+The word cloud presents an interesting view of what tags are popular. Most are unexpected, words such as "the" and "to", but several stand out. "Makeup" is featured quite prominently reflecting the increased popularity of makeup videos on Youtube and we also see words like "iphone", representing the technical review side of the site. 
+
+\begin{figure}[tb]
+	\centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
+	\includegraphics[width=1\columnwidth]{wordcloud}
+	\caption{A word cloud of popular tagst}
+	\label{fig:wordcloud}
+\end{figure}
+
 
 \begin{figure}[tb]
 	\centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
@@ -213,11 +229,11 @@ Omar Iltaf was responsible for the visualization applet. He designed the site an
 
 \section{Conclusion}
 
-Our visualization allows YouTube content creators to easily see the impact that time of day has on video success and what categories are most popular. Users are able to select the factors that they are interested in and the data is displayed in simple bar charts. This visualization enables YouTube channel creators to tailor their video publishing to their audience and increase their exposure. 
+Our visualization allows YouTube content creators to easily see the impact that time of day has on video success and what categories are most popular. Users are able to select the factors that they are interested in and the data is displayed in simple charts. This visualization enables YouTube channel creators to tailor their video publishing to their audience and increase their exposure. 
 
 The most difficult part of this project was dealing with the data. The dataset we were provided was incomplete. In some places values were missing and in others extraneous values were provided, causing the read\_csv function to give us errors. 
 
-We have completed the core portion of the project but several features remain incomplete. For one, we have only used the USA dataset. The visualizations for other countries are not available in our applet. In addition, the likes and dislikes and comment count visualization has not been completed. 
+If the project were to be continued, it would be helpful to find another dataset, that of non-trending Youtube videos. If we were to compare the two sets we could better visualize exactly what factors get a video to the top of Youtube. As it is, the project shows the makeup of the trending video list but it does not explain exactly which factors are the most influential in the Youtube trending video algorithm. The scope of the algorithm is outside the realm of information visualization but it may be an interesting project for the future. 
 
 This visualization technique may be suitable for other kinds of social network datasets. For example, the same graphs could be used to visualize the most effective times to make a reddit post and the resulting upvotes and downvotes received on those reddit posts. It may also be effective for data from Facebook and a variety of other social networks.  
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 JUN 2018 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 JUN 2018 22:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -590,54 +590,55 @@ Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no ù in font ptmri7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 166.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 166.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./diamondrule.pdf>]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-
 <pictures/erd.jpeg, id=64, 126.4725pt x 280.4076pt>
 File: pictures/erd.jpeg Graphic file (type jpg)
  <use pictures/erd.jpeg>
-Package pdftex.def Info: pictures/erd.jpeg used on input line 176.
+Package pdftex.def Info: pictures/erd.jpeg used on input line 179.
 (pdftex.def)             Requested size: 150.79292pt x 334.33525pt.
 
 <pictures/publishtimeviews.png, id=65, 637.63219pt x 417.05812pt>
 File: pictures/publishtimeviews.png Graphic file (type png)
 
 <use pictures/publishtimeviews.png>
-Package pdftex.def Info: pictures/publishtimeviews.png used on input line 184.
+Package pdftex.def Info: pictures/publishtimeviews.png used on input line 187.
 (pdftex.def)             Requested size: 251.31898pt x 164.37659pt.
 
-<pictures/publishtimevideocount.png, id=69, 642.90187pt x 412.54124pt>
+<pictures/wordcloud.png, id=69, 836.12375pt x 475.7775pt>
+File: pictures/wordcloud.png Graphic file (type png)
+
+<use pictures/wordcloud.png>
+Package pdftex.def Info: pictures/wordcloud.png used on input line 204.
+(pdftex.def)             Requested size: 251.31898pt x 143.00294pt.
+
+<pictures/publishtimevideocount.png, id=70, 642.90187pt x 412.54124pt>
 File: pictures/publishtimevideocount.png Graphic file (type png)
 
 <use pictures/publishtimevideocount.png>
 Package pdftex.def Info: pictures/publishtimevideocount.png used on input line 
-196.
+212.
 (pdftex.def)             Requested size: 251.31898pt x 161.26813pt.
 
-<pictures/category.png, id=70, 633.11531pt x 410.2828pt>
+<pictures/category.png, id=71, 633.11531pt x 410.2828pt>
 File: pictures/category.png Graphic file (type png)
 
 <use pictures/category.png>
-Package pdftex.def Info: pictures/category.png used on input line 203.
+Package pdftex.def Info: pictures/category.png used on input line 219.
 (pdftex.def)             Requested size: 251.31898pt x 162.8644pt.
- [2 <./pictures/erd.jpeg> <./pictures/publishtimeviews.png> <./pictures/publish
-timevideocount.png>] (./template.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 227.
- [3
-
- <./pictures/category.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 227.
+ [2 <./pictures/erd.jpeg> <./pictures/publishtimeviews.png> <./pictures/wordclo
+ud.png>] (./template.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
+ [3 <./pictures/publishtimevideocount.png> <./pictures/category.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
  (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 227.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 227.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
 
 
 Package rerunfilecheck Warning: File `template.out' has changed.
@@ -645,28 +646,34 @@ Package rerunfilecheck Warning: File `template.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `template.out':
-(rerunfilecheck)             Before: 6648782489AF1A8F0A3B2F3A01839905;536
-(rerunfilecheck)             After:  C52C3A297F4FCC6349D6E0C966A4FC70;526.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
+(rerunfilecheck)             Before: C52C3A297F4FCC6349D6E0C966A4FC70;526
+(rerunfilecheck)             After:  9A93655C56D42BA80E15E831D84A83C0;526.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
  ) 
 Here is how much of TeX's memory you used:
- 8533 strings out of 492995
- 130678 string characters out of 6132704
+ 8550 strings out of 492995
+ 130916 string characters out of 6132704
  253193 words of memory out of 5000000
- 11764 multiletter control sequences out of 15000+600000
- 49770 words of font info for 197 fonts, out of 8000000 for 9000
+ 11769 multiletter control sequences out of 15000+600000
+ 50127 words of font info for 203 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  33i,7n,38p,1885b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on template.pdf (3 pages, 148583 bytes).
+pdfTeX warning (dest): name{section.14} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on template.pdf (3 pages, 447451 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 48746 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
+ 48751 words of extra memory for PDF output out of 51595 (max. 10000000)
 
